@@ -1,11 +1,11 @@
 import React from 'react'
-import Counter from './Componants/Counter'
+import Stopwatch from './Componants/Stopwatch'
 
 function App() {
   return (
    <>
    <div className='text-center '>
-    <Counter />
+    <Stopwatch />
    </div>
    
    </>
