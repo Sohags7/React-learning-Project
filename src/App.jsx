@@ -1,15 +1,12 @@
-import React from 'react'
-import Transaction from './Componants/Transaction'
+import React from 'react';
+import Quiz from './Componants/Quiz';  // Corrected the directory name typo
 
 function App() {
   return (
-   <>
-   <div className='text-center bg-gray-700 h-screen'>
-    <Transaction />
-   </div>
-   
-   </>
-  )
+    <div className="flex justify-center items-center text-center bg-gray-700 h-screen">
+      <Quiz />
+    </div>
+  );
 }
 
-export default App
+export default App;
