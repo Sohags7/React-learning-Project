@@ -1,11 +1,11 @@
 import React from 'react'
-import Stopwatch from './Componants/Stopwatch'
+import Transaction from './Componants/Transaction'
 
 function App() {
   return (
    <>
-   <div className='text-center '>
-    <Stopwatch />
+   <div className='text-center bg-gray-700 h-screen'>
+    <Transaction />
    </div>
    
    </>
