@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import ShowDetails from '../Componants/ShowDetails';
 
 function Drama() {
   const [movies, setMovies] = useState([]);
@@ -7,6 +8,7 @@ function Drama() {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null); 
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -47,8 +49,11 @@ function Drama() {
 
   return (
     <>
+     {selectedMovie && <ShowDetails movie={selectedMovie} onClose={() => setSelectedMovie(null)} />}
       <div className="flex flex-wrap gap-6 justify-center px-10 py-6">
-        {movies.map((item) => (
+          
+        {movies.map((item,index) => (
+          <button key={`${item.id}-${index}`} onClick={() => setSelectedMovie(item)} className='cursor-pointer'>
           <div
             key={item.id}
             className="flex-none w-72 h-[420px] rounded-3xl overflow-hidden shadow-2xl relative transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
@@ -67,7 +72,9 @@ function Drama() {
               <p className="text-sm text-gray-300 mt-1 truncate">{item.release_date}</p>
             </div>
           </div>
+           </button>
         ))}
+       
       </div>
 
       {/* Page Number Pagination */}
