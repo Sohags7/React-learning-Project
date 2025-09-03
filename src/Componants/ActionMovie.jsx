@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import ShowDetails from '../Componants/ShowDetails';
 
 const ActionMovie = () => {
   const [movies, setMovies] = useState([]);
   const [isPaused, setIsPaused] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -23,12 +25,13 @@ const ActionMovie = () => {
   if (!movies.length) return <p className="text-center text-white">Loading...</p>;
 
   const duplicatedMovies = [...movies, ...movies];
-  const handleMovie = (name) => {
-    console.log(name);
-    
-  }
+  
 
   return (
+    <>
+   
+    {selectedMovie && <ShowDetails movie={selectedMovie} onClose={() => setSelectedMovie(null)} />}
+
     <div className="relative w-full bg-black py-10">
       <h1 className="text-[38px] font-extrabold text-white text-center mb-2"> Action Movies</h1>
       <h5 className="text-gray-300 text-center mb-8">
@@ -48,7 +51,8 @@ const ActionMovie = () => {
       >
 
           {duplicatedMovies.map((movie, index) => (
-              <button key={`${movie.id}-${index}`} onClick={() => handleMovie(movie.title)}>
+            
+            <button key={`${movie.id}-${index}`} onClick={() => setSelectedMovie(movie)} className='cursor-pointer'>
             <div
               key={`${movie.id}-${index}`}
               className="flex-none w-72 h-[420px] rounded-3xl overflow-hidden shadow-2xl relative transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl"
@@ -71,7 +75,7 @@ const ActionMovie = () => {
                 <p className="text-sm text-gray-300 mt-1 truncate">{movie.release_date}</p>
               </div>
             </div>
-              </button>
+            </button>
           ))}
         </div>
       </div>
@@ -93,6 +97,8 @@ const ActionMovie = () => {
         }
       `}</style>
     </div>
+
+     </>
   );
 };
 
