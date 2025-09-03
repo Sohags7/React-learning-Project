@@ -38,7 +38,7 @@ function ShowDetails({ movie, onClose }) {
         </p>
 
          <p className="text-gray-700 mb-2">
-          <strong>Popularity:</strong> {movie.popularity}/
+          <strong>Popularity:</strong> {movie.popularity}
         </p>
         
         <p className="text-gray-600">{movie.overview || "No description available."}</p>
