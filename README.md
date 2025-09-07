@@ -1,70 +1,21 @@
-# React + TypeScript + Vite
+## Project 4: JavaScript Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🎯 Goal
 
-Currently, two official plugins are available:
+An interactive quiz app that tests knowledge of JavaScript with **timed questions** and **real-time scoring**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- State with hooks
+- CSS for responsive styling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🔑 Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# React-learning-Project
+1. **Multiple Choice Questions** from a dataset.
+2. **Timer per Question** (auto-next if time runs out).
+3. **Real-time Score Tracking**.
+4. **Interactive UI** with disabled options after answering.
+5. **Results Page** showing score summary.
+6. **Responsive Design** for mobile/desktop.
+<img width="1036" height="519" alt="image" src="https://github.com/user-attachments/assets/e871326f-9fb6-4f07-953f-c4b6a2f98edd" />
