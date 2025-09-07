@@ -1,3 +1,4 @@
+## Project 3: Income & Expense Tracker
 ### Goal
 
 A financial tracker that records transactions, calculates balances, and visualizes data with charts.
